@@ -31,4 +31,12 @@ public class Ball : MonoBehaviour
     {
         speed += (speed / 100 * boostAmount);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("DeadZone"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }

@@ -25,32 +25,32 @@ public class UIManager : Singleton<UIManager>
 
     public void EnableStartScreen()
     {
-        StartCoroutine(OpenScreen(startScreen));
+        startScreen.SetActive(true);
     }
 
     public void DisableStartScreen()
     {
-        StartCoroutine(CloseScreen(startScreen));
+        startScreen.SetActive(false);
     }
 
     public void EnablePauseScreen()
     {
-        StartCoroutine(OpenScreen(pauseScreen));
+        pauseScreen.SetActive(true);
     }
 
     public void DisablePauseScreen()
     {
-        StartCoroutine(CloseScreen(pauseScreen));
+        pauseScreen.SetActive(false);
     }
 
     public void EnableGameOverScreen()
     {
-        StartCoroutine(OpenScreen(gameOverScreen));
+        gameOverScreen.SetActive(true);
     }
 
     public void DisableGameOverScreen()
     {
-        StartCoroutine(CloseScreen(gameOverScreen));
+        gameOverScreen.SetActive(false);
     }
 
     public void RefreshPointsText(int points)
@@ -68,15 +68,5 @@ public class UIManager : Singleton<UIManager>
         gameOverPointsText.text = "GAME-OVER\nHai totalizzato: "+ points + " punti!";
     }
 
-    IEnumerator OpenScreen(GameObject screen)
-    {
-        yield return new WaitForSecondsRealtime(.5f);
-        screen.SetActive(true);
-    }
-
-    IEnumerator CloseScreen(GameObject screen)
-    {
-        yield return new WaitForSecondsRealtime(.5f);
-        screen.SetActive(false);
-    }
+    
 }

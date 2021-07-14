@@ -14,6 +14,7 @@ public class PlayerSystem : Singleton<PlayerSystem>
 
     public void GoPlayers()
     {
+        CancelInvoke();
         InvokeRepeating("GenPlayer", startingTime, delayTime);
     }
 

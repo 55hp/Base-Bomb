@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -33,8 +32,7 @@ public class GameManager : Singleton<GameManager>
 		UIManager.Instance.DisableStartScreen();
 		Time.timeScale = 1;
 		points = 0;
-		PlayerSystem.Instance.GoPlayers();
-		BallSystem.Instance.GoBalls();
+		SpawnSystem.Instance.StartSpawning();
 	}
 
 	public void PauseGame()
@@ -52,8 +50,7 @@ public class GameManager : Singleton<GameManager>
 	public void EndGame()
     {
 		Time.timeScale = 0;
-		PlayerSystem.Instance.StopPlayerGeneration();
-		BallSystem.Instance.StopBallsGeneration();
+		SpawnSystem.Instance.EndSpawning();
 		UIManager.Instance.EnableGameOverScreen();
 		UIManager.Instance.GameOverPointsText(points);
 	}
@@ -64,8 +61,7 @@ public class GameManager : Singleton<GameManager>
 		ResetPoints();
 		Time.timeScale = 1;
 		points = 0;
-		PlayerSystem.Instance.GoPlayers();
-		BallSystem.Instance.GoBalls();
+		SpawnSystem.Instance.StartSpawning();
 	}
 
 }

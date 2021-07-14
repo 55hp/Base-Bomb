@@ -7,6 +7,7 @@ TagManager:
   - Ball
   - GoldenBall
   - DarkBall
+  - DeadZone
   layers:
   - Default
   - TransparentFX

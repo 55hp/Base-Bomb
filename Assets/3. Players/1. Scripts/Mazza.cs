@@ -7,18 +7,18 @@ public class Mazza : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.CompareTag("Ball"))
+        if (collision.gameObject.CompareTag("Ball"))
         {
             GameManager.Instance.AddPoints(1);
             
         }
 
-        if (collision.CompareTag("GoldenBall"))
+        if (collision.gameObject.CompareTag("GoldenBall"))
         {
             GameManager.Instance.AddPoints(10);
         }
 
-        if (collision.CompareTag("DarkBall"))
+        if (collision.gameObject.CompareTag("DarkBall"))
         {
             GameManager.Instance.SubPoints(20);
         }
